@@ -233,11 +233,12 @@ position:fixed;
 
 inset:0;
 
-background:rgba(0,0,0,.5);
-
 justify-content:center;
-
 align-items:center;
+
+background:rgba(0,0,0,.55);
+
+padding:20px;
 
 }
 
@@ -245,17 +246,22 @@ align-items:center;
 
 background:white;
 
-padding:40px;
+width:85%;
+max-width:420px;
 
-width:500px;
+max-height:75vh;
 
-max-width:90%;
+overflow-y:auto;
 
-border-radius:25px;
+padding:30px;
 
-text-align:center;
+border-radius:20px;
 
-box-shadow:0 20px 40px rgba(0,0,0,.3);
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+text-align:left;
+
+line-height:1.8;
 
 }
 
@@ -279,17 +285,21 @@ margin-bottom:30px;
 
 #closeButton{
 
-padding:12px 28px;
+margin-top:25px;
+
+width:100%;
+
+padding:15px;
+
+font-size:18px;
 
 border:none;
+
+border-radius:15px;
 
 background:#ff4b83;
 
 color:white;
-
-font-size:18px;
-
-border-radius:15px;
 
 cursor:pointer;
 
