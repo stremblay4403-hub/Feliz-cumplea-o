@@ -79,7 +79,30 @@ letter.addEventListener("click",()=>{
 
     overlay.style.display="flex";
 
-    birthdayText.innerHTML=`
+    const message = `
+
+Se que no es mucho, pero espero que ilumine un poquito tu dia. 🥹
+
+Se que no han sido faciles los ultimos dias que acabamos de pasar, pero queria asegurarme de que todavia sientas que eres mi prioridad y que siempre me preocupare por ti. 🥹❤️
+
+Deseo que tengas un cumpleanos increible con tu familia. 🥺
+
+Es el primero de muchos cumpleanos que pasaremos juntos, asi que no tienes que preocuparte por eso. 🥹
+
+Espero que aprecies esta sorpresa.
+Aunque parezca simple, he trabajado muchisimo en ella porque queria hacer algo especial para ti. ❤️
+
+Feliz cumpleanos, mi linda Nini. 🥰🎉
+
+Te quiero mucho. ❤️
+
+Con mucho carino,
+
+Steven ❤️
+
+`;
+
+typeWriter(message, birthdayText);
 
     Aquí aparecerá tu carta para Nini ❤️
 
