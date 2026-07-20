@@ -14,73 +14,57 @@ letter.style.display = "none";
 
 snoopy.addEventListener("click", startAnimation);
 
-function startAnimation(){
+function startAnimation() {
 
-    if(started) return;
+    if (started) return;
     started = true;
 
-    instruction.innerHTML =
-    "Snoopy esta preparando algo para ti ❤️";
+    instruction.innerHTML = "Snoopy esta preparando algo para ti ❤️";
 
     snoopy.classList.add("walk");
 
-    //------------------------------------
-    // 1. Snoopy quitte l'écran
-    //------------------------------------
-
-    snoopyContainer.style.transition =
-    "left 4s linear";
-
+    // Snoopy quitte l'écran
+    snoopyContainer.style.transition = "left 4s linear";
     snoopyContainer.style.left = "130%";
 
-    //------------------------------------
-    // 2. Il revient avec la lettre
-    //------------------------------------
+    // Snoopy revient avec la lettre
+    setTimeout(() => {
 
-    setTimeout(()=>{
+        snoopyContainer.style.transition = "none";
+        snoopyContainer.style.left = "130%";
 
-        snoopyContainer.style.transition="none";
-        snoopyContainer.style.left="130%";
+        letter.style.display = "block";
 
-        letter.style.display="block";
+        requestAnimationFrame(() => {
 
-        requestAnimationFrame(()=>{
-
-            snoopyContainer.style.transition =
-            "left 4s linear";
-
-            snoopyContainer.style.left="45%";
+            snoopyContainer.style.transition = "left 4s linear";
+            snoopyContainer.style.left = "45%";
 
         });
 
-    },5500);
+    }, 5500);
 
-    //------------------------------------
-    // 3. Déposer la lettre
-    //------------------------------------
-
-    setTimeout(()=>{
+    // Déposer la lettre
+    setTimeout(() => {
 
         snoopy.classList.remove("walk");
 
         letter.classList.add("dropLetter");
 
-        instruction.innerHTML =
-        "Click on the letter ❤️";
+        instruction.innerHTML = "Click on the letter ❤️";
 
-    },9600);
+    }, 9600);
 
 }
 
-letter.addEventListener("click",()=>{
+letter.addEventListener("click", () => {
 
-    if(!letter.classList.contains("dropLetter"))
+    if (!letter.classList.contains("dropLetter"))
         return;
 
-    overlay.style.display="flex";
+    overlay.style.display = "flex";
 
     const message = `
-
 Se que no es mucho, pero espero que ilumine un poquito tu dia. 🥹
 
 Se que no han sido faciles los ultimos dias que acabamos de pasar, pero queria asegurarme de que todavia sientas que eres mi prioridad y que siempre me preocupare por ti. 🥹❤️
@@ -99,22 +83,18 @@ Te quiero mucho. ❤️
 Con mucho carino,
 
 Steven ❤️
-
 `;
 
-typeWriter(message, birthdayText);
-
-    Aquí aparecerá tu carta para Nini ❤️
-
-    `;
+    typeWriter(message, birthdayText);
 
 });
 
-closeButton.addEventListener("click",()=>{
+closeButton.addEventListener("click", () => {
 
-    overlay.style.display="none";
+    overlay.style.display = "none";
 
 });
+
 function typeWriter(text, element, speed = 35) {
 
     element.innerHTML = "";
@@ -132,6 +112,7 @@ function typeWriter(text, element, speed = 35) {
             }
 
             i++;
+
             setTimeout(type, speed);
 
         }
