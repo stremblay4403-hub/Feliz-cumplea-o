@@ -1,0 +1,296 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(#87CEEB,#DDF7FF,#FFF4D7);
+    height:100vh;
+}
+
+#background{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+/* Nuages */
+
+#cloud1,#cloud2,#cloud3{
+
+    position:absolute;
+
+    width:170px;
+    height:60px;
+
+    background:white;
+
+    border-radius:100px;
+
+    opacity:.85;
+
+}
+
+#cloud1{
+    top:60px;
+    left:-250px;
+    animation:cloud 30s linear infinite;
+}
+
+#cloud2{
+    top:170px;
+    left:-350px;
+    animation:cloud 42s linear infinite;
+}
+
+#cloud3{
+    top:260px;
+    left:-500px;
+    animation:cloud 55s linear infinite;
+}
+
+@keyframes cloud{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(1800px);
+}
+
+}
+
+/* Texte */
+
+#intro{
+
+text-align:center;
+
+margin-top:35px;
+
+}
+
+#intro h1{
+
+color:#ff4b83;
+
+font-size:42px;
+
+}
+
+#instruction{
+
+margin-top:15px;
+
+font-size:23px;
+
+color:#555;
+
+}
+
+/* Scène */
+
+#scene{
+
+position:absolute;
+
+bottom:70px;
+
+left:0;
+
+width:100%;
+
+height:340px;
+
+overflow:hidden;
+
+}
+
+/* Conteneur */
+
+#snoopyContainer{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:0;
+
+width:260px;
+
+height:260px;
+
+}
+
+/* Snoopy */
+
+#snoopy{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:210px;
+
+cursor:pointer;
+
+z-index:5;
+
+transition:transform .2s;
+
+}
+
+#snoopy:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Lettre */
+
+#letter{
+
+position:absolute;
+
+width:90px;
+
+left:95px;
+top:65px;
+
+display:none;
+
+z-index:10;
+
+}
+
+/* Lettre déposée */
+
+.dropLetter{
+
+animation:dropLetter 1.2s forwards;
+
+}
+
+@keyframes dropLetter{
+
+0%{
+
+left:95px;
+top:65px;
+transform:scale(.5);
+
+}
+
+100%{
+
+left:260px;
+top:10px;
+transform:scale(1.8);
+
+}
+
+}
+
+/* Snoopy qui marche */
+
+.walk{
+
+animation:walk .35s infinite alternate;
+
+}
+
+@keyframes walk{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* Message */
+
+#messageOverlay{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.5);
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#paper{
+
+background:white;
+
+padding:40px;
+
+width:500px;
+
+max-width:90%;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+#paper h2{
+
+color:#ff4b83;
+
+margin-bottom:20px;
+
+}
+
+#birthdayText{
+
+line-height:1.8;
+
+font-size:20px;
+
+margin-bottom:30px;
+
+}
+
+#closeButton{
+
+padding:12px 28px;
+
+border:none;
+
+background:#ff4b83;
+
+color:white;
+
+font-size:18px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+}
