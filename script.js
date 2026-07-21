@@ -47,7 +47,7 @@ Aunque parezca simple, he trabajado muchisimo en ella porque queria hacer algo e
 
 Feliz cumpleanos mi linda Nini 🥰🎉 Me gustaria darte muchos besitos y abrazarte mucho, pero no te preocupes, los guarda para cuando estemos juntos 🥰
 
-Te quiero mucho y siempre estare a tu lado, incluso en los momentos dificiles ❤️
+Te quiero mucho y siempre estare a tu lado, incluso en los momentos dificiles ❤️ Tengo mucho suerte de tenerte en mi vida🥹❤️
 
 Con mucho carino y todo mi amor,
 
