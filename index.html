@@ -2,39 +2,36 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Un regalo para Nini ❤️</title>
+<title>Para Nini ❤️</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div id="background">
 
-<div id="cloud1"></div>
-<div id="cloud2"></div>
-<div id="cloud3"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
 
 </div>
 
 <div id="intro">
 
-<h1>Aqui es un regalo para ti Nini❤️</h1>
+    <h1>Aqui es un regalo para ti ❤️</h1>
 
-<p id="instruction">
-Click on Snoopy 
-</p>
+    <p id="instruction">
+        Click on Snoopy 🐶
+    </p>
 
 </div>
 
 <div id="scene">
 
-    <!-- Conteneur qui déplacera Snoopy -->
     <div id="snoopyContainer">
 
         <img
@@ -42,7 +39,6 @@ Click on Snoopy
         id="snoopy"
         draggable="false">
 
-        <!-- Lettre attachée au torse -->
         <img
         src="letter.png"
         id="letter"
@@ -52,23 +48,31 @@ Click on Snoopy
 
 </div>
 
-<!-- Fenêtre du message -->
+<!-- Lettre -->
 
 <div id="messageOverlay">
 
-    <div id="paper">
+    <div id="envelopeContainer">
 
-        <h2>❤️ Feliz Cumpleaños Nini ❤️</h2>
+        <div id="envelope">
 
-        <div id="birthdayText">
+            <div id="paper">
+
+                <h2>❤️ Feliz Cumpleanos Nini ❤️</h2>
+
+                <div id="birthdayText"></div>
+
+                <div id="hearts">
+                    ❤️ ❤️
+                </div>
+
+                <button id="closeButton">
+                    Cerrar ❤️
+                </button>
+
+            </div>
 
         </div>
-
-        <button id="closeButton">
-
-            Close ❤️
-
-        </button>
 
     </div>
 
@@ -77,5 +81,4 @@ Click on Snoopy
 <script src="script.js"></script>
 
 </body>
-
 </html>
