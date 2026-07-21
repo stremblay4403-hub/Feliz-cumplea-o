@@ -159,6 +159,10 @@ color:#555;
 
 transition:.4s;
 
+position:relative;
+
+z-index:1;
+
 }
 
 /*==========================
@@ -262,14 +266,13 @@ width:85px;
 
 display:none;
 
-z-index:6;
+z-index:9999;
 
 transition:.8s;
 
 cursor:pointer;
 
 }
-
 .dropLetter{
 
 animation:dropLetter 1.4s forwards;
