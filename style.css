@@ -1,84 +1,151 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    overflow:hidden;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(#87CEEB,#DDF7FF,#FFF4D7);
-    height:100vh;
+
+overflow:hidden;
+font-family:Arial,Helvetica,sans-serif;
+
+background:linear-gradient(
+#8fd8ff,
+#c9efff,
+#fff4d7);
+
+height:100vh;
+
 }
+
+/*==========================
+BACKGROUND
+==========================*/
 
 #background{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-}
 
-/* Nuages */
-
-#cloud1,#cloud2,#cloud3{
-
-    position:absolute;
-
-    width:170px;
-    height:60px;
-
-    background:white;
-
-    border-radius:100px;
-
-    opacity:.85;
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
 
 }
 
-#cloud1{
-    top:60px;
-    left:-250px;
-    animation:cloud 30s linear infinite;
+.cloud{
+
+position:absolute;
+
+width:180px;
+height:60px;
+
+background:white;
+
+border-radius:100px;
+
+opacity:.8;
+
 }
 
-#cloud2{
-    top:170px;
-    left:-350px;
-    animation:cloud 42s linear infinite;
+.cloud::before{
+
+content:"";
+
+position:absolute;
+
+width:80px;
+height:80px;
+
+left:25px;
+top:-25px;
+
+background:white;
+
+border-radius:50%;
+
 }
 
-#cloud3{
-    top:260px;
-    left:-500px;
-    animation:cloud 55s linear infinite;
+.cloud::after{
+
+content:"";
+
+position:absolute;
+
+width:90px;
+height:90px;
+
+right:20px;
+top:-35px;
+
+background:white;
+
+border-radius:50%;
+
 }
 
-@keyframes cloud{
+.cloud1{
+
+top:60px;
+left:-250px;
+
+animation:cloudMove 40s linear infinite;
+
+}
+
+.cloud2{
+
+top:170px;
+left:-350px;
+
+animation:cloudMove 55s linear infinite;
+
+}
+
+.cloud3{
+
+top:280px;
+left:-500px;
+
+animation:cloudMove 70s linear infinite;
+
+}
+
+@keyframes cloudMove{
 
 from{
+
 transform:translateX(0);
+
 }
 
 to{
-transform:translateX(1800px);
-}
+
+transform:translateX(2100px);
 
 }
 
-/* Texte */
+}
+
+/*==========================
+INTRO
+==========================*/
 
 #intro{
 
 text-align:center;
 
-margin-top:35px;
+padding-top:35px;
+
+z-index:5;
+
+position:relative;
 
 }
 
 #intro h1{
 
-color:#ff4b83;
+color:#ff4f87;
 
-font-size:42px;
+font-size:38px;
 
 }
 
@@ -86,19 +153,23 @@ font-size:42px;
 
 margin-top:15px;
 
-font-size:23px;
+font-size:22px;
 
 color:#555;
 
+transition:.4s;
+
 }
 
-/* Scène */
+/*==========================
+SCENE
+==========================*/
 
 #scene{
 
 position:absolute;
 
-bottom:70px;
+bottom:40px;
 
 left:0;
 
@@ -110,7 +181,9 @@ overflow:hidden;
 
 }
 
-/* Conteneur */
+/*==========================
+SNOOPY
+==========================*/
 
 #snoopyContainer{
 
@@ -122,29 +195,27 @@ transform:translateX(-50%);
 
 bottom:0;
 
-width:260px;
-
-height:260px;
+width:250px;
+height:240px;
 
 }
-
-/* Snoopy */
 
 #snoopy{
 
 position:absolute;
 
 bottom:0;
-
 left:0;
 
-width:210px;
+width:200px;
 
 cursor:pointer;
 
-z-index:5;
+user-select:none;
 
-transition:transform .2s;
+z-index:4;
+
+transition:.25s;
 
 }
 
@@ -154,56 +225,9 @@ transform:scale(1.05);
 
 }
 
-/* Lettre */
-
-#letter{
-
-position:absolute;
-
-width:90px;
-
-left:95px;
-top:65px;
-
-display:none;
-
-z-index:10;
-
-}
-
-/* Lettre déposée */
-
-.dropLetter{
-
-animation:dropLetter 1.2s forwards;
-
-}
-
-@keyframes dropLetter{
-
-0%{
-
-left:95px;
-top:65px;
-transform:scale(.5);
-
-}
-
-100%{
-
-left:260px;
-top:10px;
-transform:scale(1.8);
-
-}
-
-}
-
-/* Snoopy qui marche */
-
 .walk{
 
-animation:walk .35s infinite alternate;
+animation:walk .28s infinite alternate;
 
 }
 
@@ -211,7 +235,7 @@ animation:walk .35s infinite alternate;
 
 from{
 
-transform:translateY(0);
+transform:translateY(0px);
 
 }
 
@@ -223,7 +247,59 @@ transform:translateY(-8px);
 
 }
 
-/* Message */
+/*==========================
+LETTER
+==========================*/
+
+#letter{
+
+position:absolute;
+
+left:90px;
+top:65px;
+
+width:85px;
+
+display:none;
+
+z-index:6;
+
+transition:.8s;
+
+cursor:pointer;
+
+}
+
+.dropLetter{
+
+animation:dropLetter 1.4s forwards;
+
+}
+
+@keyframes dropLetter{
+
+0%{
+
+left:90px;
+top:65px;
+transform:scale(.4);
+
+}
+
+100%{
+
+left:250px;
+top:15px;
+
+transform:scale(2);
+
+}
+
+}
+
+/*==========================
+OVERLAY
+==========================*/
 
 #messageOverlay{
 
@@ -236,38 +312,84 @@ inset:0;
 justify-content:center;
 align-items:center;
 
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.45);
 
 padding:20px;
 
 }
 
-#paper{
+/*==========================
+ENVELOPE
+==========================*/
 
-background:white;
+#envelopeContainer{
 
-width:85%;
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+#envelope{
+
+background:#fff;
+
+width:90%;
 max-width:420px;
 
-max-height:75vh;
+border-radius:22px;
 
-overflow-y:auto;
+overflow:hidden;
+
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+animation:pop .4s;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+/*==========================
+PAPER
+==========================*/
+
+#paper{
 
 padding:30px;
 
-border-radius:20px;
+max-height:70vh;
 
-box-shadow:0 20px 50px rgba(0,0,0,.35);
+overflow-y:auto;
 
 text-align:left;
-
-line-height:1.8;
 
 }
 
 #paper h2{
 
-color:#ff4b83;
+text-align:center;
+
+color:#ff4f87;
 
 margin-bottom:20px;
 
@@ -275,11 +397,39 @@ margin-bottom:20px;
 
 #birthdayText{
 
-line-height:1.8;
+font-size:19px;
 
-font-size:20px;
+line-height:1.9;
 
-margin-bottom:30px;
+white-space:pre-wrap;
+
+}
+
+#hearts{
+
+text-align:center;
+
+font-size:28px;
+
+margin-top:25px;
+
+animation:heartFloat 2s infinite alternate;
+
+}
+
+@keyframes heartFloat{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-10px);
+
+}
 
 }
 
@@ -293,11 +443,11 @@ padding:15px;
 
 font-size:18px;
 
+background:#ff4f87;
+
 border:none;
 
 border-radius:15px;
-
-background:#ff4b83;
 
 color:white;
 
